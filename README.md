@@ -19,7 +19,6 @@ This is a game where a player has to collide with 20 items.
 - Decreasing score when books fall out of the screen
 - Game over if score is < 0 + Game over screen.
 - Have different books with different speed/scores
-- Data structure
 ```
 
 ## Pass The Exam - Data Structure

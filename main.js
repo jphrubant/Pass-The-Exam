@@ -1,7 +1,6 @@
 "use strict"
 
 var game;
-var player;
 var splashScreen;
 var gameScreen;
 var winScreen;
@@ -43,10 +42,7 @@ function buildGameScreen(){ // Build Game Screen
     document.body.appendChild(gameScreen);
 
     game = new Game();
-    game.startGame();
-
-    player = new Player();
-    player.create();
+    game.start();
 };
 
 function buildWinScreen(){
@@ -59,6 +55,9 @@ function buildWinScreen(){
     `)
 
     document.body.appendChild(winScreen);
+
+    game = new Game();
+    game.start();
 }
 
 function removePreviousScreen(){ // DOM Element Remover

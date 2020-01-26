@@ -1,32 +1,26 @@
-/* CSS Reset */
 
 html {
-    box-sizing: border-box;
-  }
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-  }
+  box-sizing: border-box;
 
-  /*body{
-    background-color: blanchedalmond;
-}*/
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
-/* ---- layout ---- */
+body {
+  margin: 0;
+  padding: 0;
+  /*background-image: url("https://www.fmirobcn.org/media/upload/cache/biblioteca_personal_joan_miro_1506610796_a1060338.jpg");*/
+}
 
 html,
 body {
-  height: 100%;
+height: 100%;
 }
 
-.container {
-  margin: 0 20px;
-}
+
+
 
 

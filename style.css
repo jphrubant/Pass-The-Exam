@@ -2,6 +2,7 @@
 html {
   box-sizing: border-box;
   font-family: Schoolbell, sans-serif;
+  font-size: 20px;
 }
 
 *,
@@ -30,23 +31,34 @@ height: 100%;
   flex-direction: column;
   align-items: center;
 
-  background-image: url("https://preview.redd.it/r22ems0bixh11.jpg?width=960&crop=smart&auto=webp&s=f0eca6200978ce8670ad76ad2892a2da6ae6073c");
+  background-image: url("https://parentsafrica.com/wp-content/uploads/2019/05/bookshelf.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-h1 {
+.splash-screen-div{
   margin-top: 100px;
+  padding: 0px 30px 40px 30px;
+  border-radius: 10%;
+  background-color: ivory;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.splash-h1{
+  padding-top: 30px;
 }
 
 .start-button {
   margin-top: 80px;
   padding: 20px; 
   width: 200px;
-  font-size: 18px;
+  font-size: 18px;;
   font-family: Schoolbell;
-  border-radius: 10% / 50%;
+  font-weight: bold;
+  border-radius: 10% / 40%;
+
+  cursor: pointer;
 
   background-color: ivory;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -58,36 +70,41 @@ h1 {
   height: 800px;
   padding: 20px;
   text-align: center;
+
   display: flex;
   flex-direction: column;
   align-items: center;  
   
-  background-image: url("https://preview.redd.it/r22ems0bixh11.jpg?width=960&crop=smart&auto=webp&s=f0eca6200978ce8670ad76ad2892a2da6ae6073c");
+  background-image: url("https://parentsafrica.com/wp-content/uploads/2019/05/bookshelf.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  
 }
 
-h1 {
-  font-size: 50px
+.game-div{
+  width: 30%;
+  border-radius: 10%;
+  background-color: ivory;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .counters-div{
-  width: 60%;
+  padding: -10px;
+  width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
 canvas{
+  margin-top: 300px;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   background-color: ivory;
   margin: 0 auto;
+  border: 1px solid black;
 }
 
 
 /* ******* WIN SCREEN ******** */
-
 
 .win-screen-main{
   height: 800px;
@@ -97,8 +114,20 @@ canvas{
   flex-direction: column;
   align-items: center;  
   
-  background-image: url("https://preview.redd.it/r22ems0bixh11.jpg?width=960&crop=smart&auto=webp&s=f0eca6200978ce8670ad76ad2892a2da6ae6073c");
+  background-image: url("https://parentsafrica.com/wp-content/uploads/2019/05/bookshelf.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.win-h1{
+  padding-top: 30px;
+}
+
+.win-screen-div{
+  margin-top: 40px;
+  padding: 0px 30px 40px 30px;
+  border-radius: 10%;
+  background-color: ivory;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }

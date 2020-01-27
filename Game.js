@@ -7,32 +7,22 @@ function Game(){
     this.booksArray = [];
     this.player = null; 
     this.img = null ;
-    this.gameIsOver = false;
     this.booksRead = 0;
 }
 
 Game.prototype.start = function(){
     this.canvas = document.querySelector('canvas');
     this.ctx = this.canvas.getContext('2d');
-
-    this.canvas.width = window.innerWidth;
-    this.canvas.height = window.innerHeight;
-    this.canvas.style.maxWidth = "600px";
-    this.canvas.style.maxHeight = "700px";
-    this.canvas.style.border = "1px solid black";
-
-    /*this.img = new Image(); 
-    this.img.src = "https://www.fmirobcn.org/media/upload/cache/biblioteca_personal_joan_miro_1506610796_a1060338.jpg";
-    this.ctx.drawImage(this.img, 250, 250); */
-
     this.player = new Player(this.canvas);
     
     this.movement = function (event) {
         if (event.key === "ArrowLeft") {
             this.player.setDirection("left");
-        } else if (event.key === "ArrowRight") {
+        } 
+        else if (event.key === "ArrowRight") {
             this.player.setDirection("right");
-        } else if (event.key === " "){
+        } 
+        else if (event.key === " "){
             this.player.setDirection("stop");
         }
       };
@@ -45,13 +35,12 @@ Game.prototype.start = function(){
 Game.prototype.startLoop = function(){
     var loop = function(){
         this.player.wallCollision();
-        
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.player.create();
         
         if(Math.random() > 0.98){
             var randomX = Math.random() * this.canvas.width;
-            var newBook = new Book(this.canvas, randomX, 6);
+            var newBook = new Book(this.canvas, randomX, 4);
             this.booksArray.push(newBook);
         }
 
@@ -64,7 +53,7 @@ Game.prototype.startLoop = function(){
 
         this.booksArray = this.booksArray.filter(function(book){
             return book.isInScreen(); 
-          });
+        });
         
         requestAnimationFrame(loop);
     }.bind(this);
@@ -73,7 +62,6 @@ Game.prototype.startLoop = function(){
 }
 
 Game.prototype.didCollide = function(booksArray){
-    
     var collision = false;
 
     var playerLeft =  this.player.x;
@@ -97,16 +85,13 @@ Game.prototype.didCollide = function(booksArray){
         this.updateScore();
         book.x += 2000; // move them out of the screen;
         return collision =  true;
-    } else {
+    } 
+    else {
         return collision = false;
     }
     }.bind(this));
 
     return collision;
-};
-
-Game.prototype.getScore = function () {
-    return this.booksRead;
 };
 
 Game.prototype.updateScore = function () {

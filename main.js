@@ -17,8 +17,8 @@ function buildSplashScreen(){  // Splash Screen Dom Generator
     splashScreen = buildDomElement(`
     <main class="splash-screen-main">
         <div class="splash-screen-div">
-            <h1>PASS THE EXAM</h1>
-            <p>Help Taylor pass their exam by reading as many books as possible. <br><br> Be quick, you only have 60 seconds!</p>
+            <h1 class="splash-h1">PASS THE EXAM</h1>
+            <p>Prepare for your next exam by reading as many books as possible. <br><br> Be quick, you only have 60 seconds!</p>
             <button type="button" class="start-button">Start Learning</button>
         </div>
     </main>
@@ -36,13 +36,18 @@ function buildGameScreen(){ // Build Game Screen
 
     gameScreen = buildDomElement(`
     <main class="game-screen-main">
-        <h1>LIBRARY</h1>
+
+        <div class="game-div">
+            <h1 class="game-h1">LIBRARY</h1>
+        </div>
+
         <div class="counters-div">
             <p>Books Read: <span class="score">0</span></p>
             <p class="countDown"></p>
         </div>
+
         <div class="canvas-div"> 
-            <canvas></canvas>
+            <canvas width="500" height="550"> </canvas>
         </div>
     </main>
     `)
@@ -50,7 +55,7 @@ function buildGameScreen(){ // Build Game Screen
     document.body.appendChild(gameScreen);
 
     var countDown = document.querySelector(".countDown");
-    var countdownToWinScreen = 3;
+    var countdownToWinScreen = 61;
    
     function printCounter(){
         countdownToWinScreen--;
@@ -73,9 +78,11 @@ function buildWinScreen(){
 
     winScreen = buildDomElement(`
     <main class="win-screen-main">
-        <h1>YOU PASSED THE EXAM</h1>
-        <p>WOW! You read: <span class="final-score"></span> books</p>
-        <button type="button" class="start-button">Go back to studyuing</button>
+        <div class="win-screen-div">
+            <h1 class="win-h1">YOU PASSED THE EXAM!!!</h1>
+            <p>WOW! You managed to read <span class="final-score"></span> books</p>
+            <button type="button" class="start-button">Go back to studyuing</button>
+        </div>
     </main>
     `);
 

@@ -7,24 +7,26 @@ function Player (canvas) {
     this.img = null;
     this.booksRead = 0;
     this.x = this.canvas.width / 2;
-    this.y = 650;
-    this.size = 50;
+    this.y = 475;
+    this.size = 60;
     this.direction = 0;
     this.speed = 3;
 };
 
 Player.prototype.create = function() {
     this.img = new Image(); 
-    this.img.src = "https://img.favpng.com/8/17/23/emoji-apple-gender-neutrality-png-favpng-Z30CVYGeNpGaWikZnncZSrji7.jpg";
-    this.ctx.drawImage(this.img, this.x , this.y, 125, 100);
+    this.img.src = "https://www.telegraph.co.uk/content/dam/technology/2017/11/01/genderless-1_trans_NvBQzQNjv4BqqVzuuqpFlyLIwiB6NTmJwfSVWeZ_vEN7c6bHu2jJnT8.png?imwidth=1400";
+    this.ctx.drawImage(this.img, this.x , this.y, this.size, this.size);
 };
 
 Player.prototype.setDirection = function (direction){
     if (direction === "left"){
         this.direction =  -1;
-    } else if (direction === "right"){
+    } 
+    else if (direction === "right"){
         this.direction = 1;
-    } else if (direction === "stop"){
+    } 
+    else if (direction === "stop"){
         this.direction = 0;
     }
 }
@@ -41,14 +43,9 @@ Player.prototype.wallCollision = function(){
 
     if(this.x < leftWall){
         this.direction = 1;
-    } else if (this.x + this.size > rightWall){
+    } 
+    else if (this.x  > rightWall){
         this.direction = -1;
     }
 };
 
-/*Player.prototype.updateScore = function () {
-    this.booksRead += 1;
-    console.log(this.booksRead);
-    return this.booksRead;
-} */
- 

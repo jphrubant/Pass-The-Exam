@@ -47,7 +47,7 @@ Player.prototype.wallCollision = function(){
 };
 
 Player.prototype.updateScore = function () {
-    this.booksRead ++;
+    this.booksRead += 1;
     console.log(this.booksRead);
 }
 

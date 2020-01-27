@@ -53,7 +53,6 @@ Game.prototype.startLoop = function(){
             this.booksArray.push(newBook);
         }
 
-        
         this.didCollide(this.booksArray);
 
         this.booksArray.forEach(function(book){
@@ -102,35 +101,3 @@ Game.prototype.didCollide = function(booksArray){
 
     return collision;
 }
-
-
-
-
-
-
-
-
-
-/*
-Game.prototype.manageCollisions = function () {
-
-    this.booksArray.forEach(function(book){
-       
-        if(this.player.didCollide(book)){
-            
-            this.player.updateScore();
-        }
-    })
-
-} */
-
-
-
-
-
-
-
-
-
-
-

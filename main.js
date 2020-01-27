@@ -62,6 +62,9 @@ function buildGameScreen(){ // Build Game Screen
             } 
         }
     printCounter(); 
+
+    var score = document.querySelector('.score')
+    score.innerHTML = `Books Read: ${this.player.score}`;
     
     this.game = new Game();
     this.game.start();

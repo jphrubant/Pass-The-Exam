@@ -51,3 +51,6 @@ Player.prototype.updateScore = function () {
     console.log(this.booksRead);
 }
 
+    
+var score = document.querySelector('.score')
+    score.innerHTML = `Books Read: ${this.booksRead}`;    

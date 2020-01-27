@@ -34,9 +34,9 @@ Game.prototype.start = function(){
 
 Game.prototype.startLoop = function(){
     var loop = function(){
-        this.player.wallCollision();
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.player.create();
+        this.player.wallCollision();
         
         if(Math.random() > 0.98){
             var randomX = Math.random() * this.canvas.width;

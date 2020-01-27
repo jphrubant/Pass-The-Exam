@@ -5,7 +5,7 @@ function Book(canvas, x, speed){
     this.ctx = this.canvas.getContext('2d');
     this.img = null;
     this.size = 40;
-    this.x = x - this.size;
+    this.x = x ; 
     this.y = 0 - this.size;
     this.speed = speed;
 };
@@ -23,7 +23,3 @@ Book.prototype.updatePosition = function (){
 Book.prototype.isInScreen = function(){
       return this.y + this.size < this.canvas.height;
  };
-
-//book.prototype.didCollide(){}
-
-

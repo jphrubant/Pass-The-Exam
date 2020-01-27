@@ -4,9 +4,8 @@ var game;
 var splashScreen;
 var gameScreen;
 var winScreen;
-var counter = 60;
 var divElement = document.createElement("div");
-var countDown = document.querySelector("countDown");
+
 
 function buildDomElement(htmlStructure){ // Dom Element Builder 
     divElement.innerHTML = htmlStructure;
@@ -33,12 +32,13 @@ function buildSplashScreen(){  // Splash Screen Dom Generator
 
 function buildGameScreen(){ // Build Game Screen
     removePreviousScreen()
+
     gameScreen = buildDomElement(`
     <main class="game-space">
         <h1>LIBRARY</h1>
         <div>
-            <p>Books read:<span class="score-span"></span></p>
-            <p>Countdown:<span class="countDown">${counter}</span></p>
+            <p class="score"></p>
+            <p class="countDown"></p>
         </div>
         <div class="canvas-div"> 
             <canvas></canvas>
@@ -48,26 +48,24 @@ function buildGameScreen(){ // Build Game Screen
 
     document.body.appendChild(gameScreen);
 
-    setTimeout(function(){
-        buildWinScreen();
-    }, 60000);
-
+    var countDown = document.querySelector(".countDown");
+    var countdownToWinScreen = 61;
+    
     function printCounter(){
-    console.log(counter);
-    counter--;
-    if (counter<60){
-    setTimeout(printCounter, 1000);
-        }  
-    }
-
-    //countDown.textContent = counter;
-
-    printCounter();
-
+        countdownToWinScreen--;
+        countDown.innerHTML = `Countdown: ${countdownToWinScreen}`;
+        if (countdownToWinScreen !== 0){
+        var timeoutID = setTimeout(printCounter, 1000);
+            } else if (countdownToWinScreen === 0){
+                clearTimeout(timeoutID)
+                buildWinScreen();
+            } 
+        }
+    printCounter(); 
+    
     this.game = new Game();
-
     this.game.start();
-};
+};    
 
 function buildWinScreen(){
     removePreviousScreen()

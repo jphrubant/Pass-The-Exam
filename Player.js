@@ -46,6 +46,8 @@ Player.prototype.wallCollision = function(){
     }
 };
 
-
-//player.prototype.bookCollision(){} 
+Player.prototype.updateScore = function () {
+    this.booksRead ++;
+    console.log(this.booksRead);
+}
 

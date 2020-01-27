@@ -8,6 +8,7 @@ function Game(){
     this.player = null; 
     this.img = null ;
     this.gameIsOver = false;
+    this.booksRead = 0;
 }
 
 Game.prototype.start = function(){
@@ -16,8 +17,9 @@ Game.prototype.start = function(){
 
     this.canvas.width = window.innerWidth;
     this.canvas.height = window.innerHeight;
-    this.canvas.style.maxWidth = "800px";
-    this.canvas.style.maxHeight = "600px";
+    this.canvas.style.maxWidth = "600px";
+    this.canvas.style.maxHeight = "700px";
+    this.canvas.style.border = "1px solid black";
 
     /*this.img = new Image(); 
     this.img.src = "https://www.fmirobcn.org/media/upload/cache/biblioteca_personal_joan_miro_1506610796_a1060338.jpg";
@@ -92,7 +94,8 @@ Game.prototype.didCollide = function(booksArray){
     var collideBottom = bookBottom <= playerBottom && bookBottom >= playerTop;
   
     if ((collideLeft || collideRight) && (collideTop || collideBottom)){
-        this.player.updateScore();
+        this.updateScore();
+        book.x += 2000; // move them out of the screen;
         return collision =  true;
     } else {
         return collision = false;
@@ -100,4 +103,16 @@ Game.prototype.didCollide = function(booksArray){
     }.bind(this));
 
     return collision;
-}
+};
+
+Game.prototype.getScore = function () {
+    return this.booksRead;
+};
+
+Game.prototype.updateScore = function () {
+    this.booksRead ++;
+    var score = document.querySelector('.score');
+    score.innerHTML = this.booksRead;
+    return this.booksRead;
+};
+

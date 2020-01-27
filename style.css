@@ -1,8 +1,9 @@
 
 html {
   box-sizing: border-box;
-
+  font-family: Helvetica, sans-serif;
 }
+
 *,
 *:before,
 *:after {
@@ -20,6 +21,22 @@ body {
 height: 100%;
 }
 
+/* *********** SPLASHSCREEN MAIN ********** */
+
+.splash-screen-main {
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.start-button {
+  
+  padding: 20px;
+  width: 30%;
+  max
+}
 
 
 

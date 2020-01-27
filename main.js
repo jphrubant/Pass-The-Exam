@@ -6,7 +6,6 @@ var gameScreen;
 var winScreen;
 var divElement = document.createElement("div");
 
-
 function buildDomElement(htmlStructure){ // Dom Element Builder 
     divElement.innerHTML = htmlStructure;
     return divElement;
@@ -16,9 +15,9 @@ function buildSplashScreen(){  // Splash Screen Dom Generator
     removePreviousScreen()
     
     splashScreen = buildDomElement(`
-    <main>
+    <main class="splash-screen-main">
         <h1>PASS THE EXAM</h1>
-        <p>Help Taylor pass their exam by reading as many books as possible in 1 minute</p>
+        <p>Help Taylor pass their exam by reading as many books as possible. <br><br> Be quick, you only have 60 seconds!.</p>
         <button type="button" class="start-button">Start Learning</button>
     </main>
     `)
@@ -37,7 +36,7 @@ function buildGameScreen(){ // Build Game Screen
     <main class="game-space">
         <h1>LIBRARY</h1>
         <div>
-            <p class="score"></p>
+            <p>Books Read: <span class="score"></span></p>
             <p class="countDown"></p>
         </div>
         <div class="canvas-div"> 
@@ -50,7 +49,7 @@ function buildGameScreen(){ // Build Game Screen
 
     var countDown = document.querySelector(".countDown");
     var countdownToWinScreen = 61;
-    
+   
     function printCounter(){
         countdownToWinScreen--;
         countDown.innerHTML = `Countdown: ${countdownToWinScreen}`;
@@ -62,8 +61,6 @@ function buildGameScreen(){ // Build Game Screen
             } 
         }
     printCounter(); 
-
-    
     
     this.game = new Game();
     this.game.start();
@@ -75,10 +72,15 @@ function buildWinScreen(){
     winScreen = buildDomElement(`
     <main class="win-screen">
         <h1>YOU PASSED THE EXAM</h1>
+        <p>WOW! You read: <span class="final-score"></span> books</p>
+        <button type="button" class="start-button">Go back to studyuing</button>
     </main>
     `);
 
     document.body.appendChild(winScreen);
+
+    var startButton = document.querySelector('button')
+    startButton.addEventListener('click', buildGameScreen)
 }
 
 function removePreviousScreen(){ // DOM Element Remover

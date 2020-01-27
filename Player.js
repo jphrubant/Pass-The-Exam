@@ -7,7 +7,7 @@ function Player (canvas) {
     this.img = null;
     this.booksRead = 0;
     this.x = this.canvas.width / 2;
-    this.y = 600;
+    this.y = 650;
     this.size = 50;
     this.direction = 0;
     this.speed = 3;
@@ -46,11 +46,9 @@ Player.prototype.wallCollision = function(){
     }
 };
 
-Player.prototype.updateScore = function () {
+/*Player.prototype.updateScore = function () {
     this.booksRead += 1;
     console.log(this.booksRead);
-}
-
-    
-var score = document.querySelector('.score')
-    score.innerHTML = `Books Read: ${this.booksRead}`;    
+    return this.booksRead;
+} */
+ 

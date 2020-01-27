@@ -16,9 +16,11 @@ function buildSplashScreen(){  // Splash Screen Dom Generator
     
     splashScreen = buildDomElement(`
     <main class="splash-screen-main">
-        <h1>PASS THE EXAM</h1>
-        <p>Help Taylor pass their exam by reading as many books as possible. <br><br> Be quick, you only have 60 seconds!.</p>
-        <button type="button" class="start-button">Start Learning</button>
+        <div class="splash-screen-div">
+            <h1>PASS THE EXAM</h1>
+            <p>Help Taylor pass their exam by reading as many books as possible. <br><br> Be quick, you only have 60 seconds!</p>
+            <button type="button" class="start-button">Start Learning</button>
+        </div>
     </main>
     `)
 
@@ -33,10 +35,10 @@ function buildGameScreen(){ // Build Game Screen
     removePreviousScreen()
 
     gameScreen = buildDomElement(`
-    <main class="game-space">
+    <main class="game-screen-main">
         <h1>LIBRARY</h1>
-        <div>
-            <p>Books Read: <span class="score"></span></p>
+        <div class="counters-div">
+            <p>Books Read: <span class="score">0</span></p>
             <p class="countDown"></p>
         </div>
         <div class="canvas-div"> 
@@ -48,7 +50,7 @@ function buildGameScreen(){ // Build Game Screen
     document.body.appendChild(gameScreen);
 
     var countDown = document.querySelector(".countDown");
-    var countdownToWinScreen = 61;
+    var countdownToWinScreen = 3;
    
     function printCounter(){
         countdownToWinScreen--;
@@ -70,7 +72,7 @@ function buildWinScreen(){
     removePreviousScreen()
 
     winScreen = buildDomElement(`
-    <main class="win-screen">
+    <main class="win-screen-main">
         <h1>YOU PASSED THE EXAM</h1>
         <p>WOW! You read: <span class="final-score"></span> books</p>
         <button type="button" class="start-button">Go back to studyuing</button>

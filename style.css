@@ -1,7 +1,7 @@
 
 html {
   box-sizing: border-box;
-  font-family: Helvetica, sans-serif;
+  font-family: Schoolbell, sans-serif;
 }
 
 *,
@@ -24,20 +24,81 @@ height: 100%;
 /* *********** SPLASHSCREEN MAIN ********** */
 
 .splash-screen-main {
-  padding: 20px;
+  height: 800px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  background-image: url("https://preview.redd.it/r22ems0bixh11.jpg?width=960&crop=smart&auto=webp&s=f0eca6200978ce8670ad76ad2892a2da6ae6073c");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  margin-top: 100px;
 }
 
 .start-button {
-  
+  margin-top: 80px;
+  padding: 20px; 
+  width: 200px;
+  font-size: 18px;
+  font-family: Schoolbell;
+  border-radius: 10% / 50%;
+
+  background-color: ivory;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+/* ******* GAME SCREEN ******** */
+
+.game-screen-main {
+  height: 800px;
   padding: 20px;
-  width: 30%;
-  max
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  
+  background-image: url("https://preview.redd.it/r22ems0bixh11.jpg?width=960&crop=smart&auto=webp&s=f0eca6200978ce8670ad76ad2892a2da6ae6073c");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+}
+
+h1 {
+  font-size: 50px
+}
+
+.counters-div{
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+}
+
+canvas{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  background-color: ivory;
+  margin: 0 auto;
 }
 
 
+/* ******* WIN SCREEN ******** */
 
 
+.win-screen-main{
+  height: 800px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  
+  background-image: url("https://preview.redd.it/r22ems0bixh11.jpg?width=960&crop=smart&auto=webp&s=f0eca6200978ce8670ad76ad2892a2da6ae6073c");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

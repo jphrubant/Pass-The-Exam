@@ -49,7 +49,7 @@ Game.prototype.startLoop = function(){
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.player.create();
         
-        if(Math.random() > 0.99){
+        if(Math.random() > 0.98){
             var randomX = Math.random() * this.canvas.width;
             var newBook = new Book(this.canvas, randomX, 6);
             this.booksArray.push(newBook);

@@ -40,7 +40,7 @@ Game.prototype.startLoop = function(){
         
         if(Math.random() > 0.98){
             var randomX = Math.random() * this.canvas.width;
-            var newBook = new Book(this.canvas, randomX, 1);
+            var newBook = new Book(this.canvas, randomX, 2);
             this.booksArray.push(newBook);
         }
 
@@ -103,5 +103,10 @@ Game.prototype.updateScore = function () {
 
 Game.prototype.finalScore = function () {
     var final = this.booksRead;
+
+    if(final === 0){
+
+    }
+
     return final;
 }

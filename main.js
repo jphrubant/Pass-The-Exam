@@ -1,4 +1,7 @@
 "use strict"
+var bookImg;
+//var bookImg = document.getElementById("book-img");
+//bookImg.src = "images/book.png";
 
 var game;
 var splashScreen;
@@ -12,12 +15,13 @@ function buildDomElement(htmlStructure){ // Dom Element Builder
 };
 
 function buildSplashScreen(){  // Splash Screen Dom Generator
+    bookImg = document.getElementById("book-img");
     removePreviousScreen()
     
     splashScreen = buildDomElement(`
     <main class="splash-screen-main">
         <div class="splash-screen-div">
-            <h1 class="splash-h1">PASS THE EXAM</h1>
+            <h1>PASS THE EXAM</h1>
             <p>Prepare for your next exam by reading as many books as possible. <br><br> Be quick, you only have 60 seconds!</p>
             <button type="button" class="start-button">Start Learning</button>
         </div>
@@ -44,14 +48,14 @@ function buildGameScreen(){ // Build Game Screen
                 <p class="countDown"></p> 
             </div>
         <div>
-        <canvas></canvas>
+        <canvas height="435" width="750"></canvas>
     </main>
     `)
 
     document.body.appendChild(gameScreen);
 
     var countDown = document.querySelector(".countDown");
-    var countdownToWinScreen = 10;
+    var countdownToWinScreen = 61;
    
     function printCounter(){
         countdownToWinScreen--;
@@ -75,8 +79,8 @@ function buildWinScreen(){
     winScreen = buildDomElement(`
     <main class="win-screen-main">
         <div class="win-screen-div">
-            <h1 class="win-h1">YOU PASSED THE EXAM!!!</h1>
-            <p>WOW! You managed to read <span class="final-score">0</span></p>
+            <h1>YOU PASSED THE EXAM!!!</h1>
+            <p>WOW! You managed to read <span class="final-score">0</span> books</p>
             <button type="button" class="start-button">Go back to studyuing</button>
         </div>
     </main>

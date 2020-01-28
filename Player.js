@@ -1,15 +1,14 @@
 "use strict"
 
 function Player (canvas) {
-    //this.canvas = canvas; 
-    this.canvas = document.querySelector('canvas');
+    this.canvas = canvas; 
     this.ctx = this.canvas.getContext('2d');
     this.img = null;
     this.x = 50;
-    this.y = 100;
-    this.size = 20;
+    this.y = 360;
+    this.size = 70;
     this.direction = 0;
-    this.speed = 3;
+    this.speed = 5;
 };
 
 Player.prototype.create = function() {

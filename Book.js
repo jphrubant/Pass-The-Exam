@@ -1,19 +1,18 @@
 "use strict"
 
 function Book(canvas, x, speed){
-    this.canvas = document.querySelector('canvas');
+    this.canvas = canvas;
     this.ctx = this.canvas.getContext('2d');
+    this.ctx.imageSmoothingEnabled = false;
     this.img = null;
-    this.size = 50;
-    this.x = x - this.size; 
+    this.size = 70;
+    this.x = x + this.size; 
     this.y = 0 - this.size;
     this.speed = speed;
 };
 
 Book.prototype.create = function() {
-    this.img = new Image(); 
-    this.img.src = "images/book.png";
-    this.ctx.drawImage(this.img, this.x, this.y, this.size, this.size);
+    this.ctx.drawImage(bookImg, this.x, this.y, this.size, this.size);
  };
 
 Book.prototype.updatePosition = function (){

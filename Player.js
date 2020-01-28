@@ -7,8 +7,8 @@ function Player (canvas) {
     this.img = null;
     this.booksRead = 0;
     this.x = this.canvas.width / 2;
-    this.y = 475;
-    this.size = 60;
+    this.y = 200;
+    this.size = 40;
     this.direction = 0;
     this.speed = 3;
 };

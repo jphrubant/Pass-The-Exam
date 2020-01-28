@@ -36,6 +36,7 @@ function buildGameScreen(){ // Build Game Screen
 
     gameScreen = buildDomElement(`
     <main class="game-screen-main">
+    
         <div class="game-div">
             <div class='counters-div'>
                 <p>Books Read: <span class="score">0</span></p>
@@ -43,14 +44,14 @@ function buildGameScreen(){ // Build Game Screen
                 <p class="countDown"></p> 
             </div>
         <div>
-    <canvas></canvas>
+        <canvas></canvas>
     </main>
     `)
 
     document.body.appendChild(gameScreen);
 
     var countDown = document.querySelector(".countDown");
-    var countdownToWinScreen = 20;
+    var countdownToWinScreen = 50000;
    
     function printCounter(){
         countdownToWinScreen--;

@@ -4,7 +4,7 @@ function Book(canvas, x, speed){
     this.canvas = document.querySelector('canvas');
     this.ctx = this.canvas.getContext('2d');
     this.img = null;
-    this.size = 55;
+    this.size = 20;
     this.x = x - this.size; 
     this.y = 0 - this.size;
     this.speed = speed;

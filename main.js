@@ -36,26 +36,21 @@ function buildGameScreen(){ // Build Game Screen
 
     gameScreen = buildDomElement(`
     <main class="game-screen-main">
-
         <div class="game-div">
-            <h1 class="game-h1">LIBRARY</h1>
-        </div>
-
-        <div class="counters-div">
-            <p>Books Read: <span class="score">0</span></p>
-            <p class="countDown"></p>
-        </div>
-
-        <div class="canvas-div"> 
-            <canvas width="500" height="550"> </canvas>
-        </div>
+            <div class='counters-div'>
+                <p>Books Read: <span class="score">0</span></p>
+                <h1>LIBRARY</h1>
+                <p class="countDown"></p> 
+            </div>
+        <div>
+    <canvas></canvas>
     </main>
     `)
 
     document.body.appendChild(gameScreen);
 
     var countDown = document.querySelector(".countDown");
-    var countdownToWinScreen = 61;
+    var countdownToWinScreen = 20;
    
     function printCounter(){
         countdownToWinScreen--;

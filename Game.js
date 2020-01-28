@@ -40,7 +40,7 @@ Game.prototype.startLoop = function(){
         
         if(Math.random() > 0.98){
             var randomX = Math.random() * this.canvas.width;
-            var newBook = new Book(this.canvas, randomX, 4);
+            var newBook = new Book(this.canvas, randomX, 1);
             this.booksArray.push(newBook);
         }
 

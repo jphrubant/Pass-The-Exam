@@ -102,7 +102,6 @@ Game.prototype.updateScore = function () {
 };
 
 Game.prototype.finalScore = function () {
-    var aScore = this.booksRead;
-    console.log(aScore);
-    return aScore;
+    var final = this.booksRead;
+    return final;
 }

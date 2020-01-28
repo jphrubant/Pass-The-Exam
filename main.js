@@ -76,7 +76,7 @@ function buildWinScreen(){
     <main class="win-screen-main">
         <div class="win-screen-div">
             <h1 class="win-h1">YOU PASSED THE EXAM!!!</h1>
-            <p>WOW! You managed to read <span class="final-score">0</span> books</p>
+            <p>WOW! You managed to read <span class="final-score">0</span></p>
             <button type="button" class="start-button">Go back to studyuing</button>
         </div>
     </main>
@@ -90,7 +90,6 @@ function buildWinScreen(){
     var winScreenScore = document.querySelector('.final-score')
     winScreenScore.innerHTML = game.finalScore();
 
-    
 }
 
 function removePreviousScreen(){ // DOM Element Remover

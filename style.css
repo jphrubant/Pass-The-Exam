@@ -35,7 +35,7 @@ h1{
 /* *********** SPLASHSCREEN MAIN ********** */
 
 .splash-screen-main {
-  height: 800px;
+  height: 900px;
   padding: 20px;
   text-align: center;
 
@@ -67,6 +67,19 @@ h1{
   width: 300px;
 }
 
+#username{ 
+  
+  padding: 20px; 
+  width: 200px;
+
+  font-size: 25px;;
+  font-family: 'dk_crayon_crumbleregular';
+  font-weight: bold;
+  border-radius: 10% / 40%;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+}
+
 .start-button {
   background-color: ivory; 
   margin-top: 80px;
@@ -84,7 +97,7 @@ h1{
 /* ******* GAME SCREEN ******** */
 
 .game-screen-main {
-  height: 800px;
+  height: 900px;
   padding: 20px;
   text-align: center;
 
@@ -126,7 +139,7 @@ canvas{
 /* ******* WIN SCREEN ******** */
 
 .win-screen-main{
-  height: 800px;
+  height: 900px;
   padding: 20px;
   text-align: center;
   display: flex;

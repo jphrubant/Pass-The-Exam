@@ -4,7 +4,7 @@ function Player (canvas) {
     this.canvas = canvas; 
     this.ctx = this.canvas.getContext('2d');
     this.img = null;
-    this.x = 50;
+    this.x = canvas.width / 2;
     this.y = 360;
     this.size = 70;
     this.direction = 0;

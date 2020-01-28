@@ -41,6 +41,7 @@ Game.prototype.startLoop = function(){
         if(Math.random() > 0.98){
             var randomX = Math.random() * this.canvas.width;
             var newBook = new Book(this.canvas, randomX, 2);
+            //book.wallCollision(newBook); // this needs to be fixed
             this.booksArray.push(newBook);
         }
 
@@ -83,6 +84,8 @@ Game.prototype.didCollide = function(booksArray){
   
     if ((collideLeft || collideRight) && (collideTop || collideBottom)){
         this.updateScore();
+        pageTurn.volume = 0.5;
+        pageTurn.play();
         book.x += 2000; // move them out of the screen;
         //return collision =  true;
     } 

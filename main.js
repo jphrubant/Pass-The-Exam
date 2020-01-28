@@ -1,8 +1,9 @@
 "use strict"
-var bookImg;
-//var bookImg = document.getElementById("book-img");
-//bookImg.src = "images/book.png";
 
+var pageTurn = new Audio("audio/BookFlip13.wav");
+var applause = new Audio("audio/applause.wav")
+
+var bookImg;
 var game;
 var splashScreen;
 var gameScreen;
@@ -23,7 +24,15 @@ function buildSplashScreen(){  // Splash Screen Dom Generator
         <div class="splash-screen-div">
             <h1>PASS THE EXAM</h1>
             <p>Prepare for your next exam by reading as many books as possible. <br><br> Be quick, you only have 60 seconds!</p>
-            <button type="button" class="start-button">Start Learning</button>
+
+
+            <form>
+                <label for="username">Enter your name below to start studying:</label><br>
+                <input id="username" type="text" placeholder="type your name here" value=""><br>
+                <button type="button" class="start-button">Start Learning</button>
+            </form>
+
+            
         </div>
     </main>
     `)
@@ -87,13 +96,15 @@ function buildWinScreen(){
     `);
 
     document.body.appendChild(winScreen);
+
+    applause.volume = 0.5;
+    applause.play();
     
     var startButton = document.querySelector('button')
     startButton.addEventListener('click', buildGameScreen);
 
     var winScreenScore = document.querySelector('.final-score')
     winScreenScore.innerHTML = game.finalScore();
-
 }
 
 function removePreviousScreen(){ // DOM Element Remover

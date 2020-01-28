@@ -51,7 +51,7 @@ function buildGameScreen(){ // Build Game Screen
     document.body.appendChild(gameScreen);
 
     var countDown = document.querySelector(".countDown");
-    var countdownToWinScreen = 50000;
+    var countdownToWinScreen = 10;
    
     function printCounter(){
         countdownToWinScreen--;
@@ -65,8 +65,8 @@ function buildGameScreen(){ // Build Game Screen
         }
     printCounter(); 
     
-    this.game = new Game();
-    this.game.start();
+    game = new Game();
+    game.start();
 };    
 
 function buildWinScreen(){
@@ -76,16 +76,21 @@ function buildWinScreen(){
     <main class="win-screen-main">
         <div class="win-screen-div">
             <h1 class="win-h1">YOU PASSED THE EXAM!!!</h1>
-            <p>WOW! You managed to read <span class="final-score"></span> books</p>
+            <p>WOW! You managed to read <span class="final-score">0</span> books</p>
             <button type="button" class="start-button">Go back to studyuing</button>
         </div>
     </main>
     `);
 
     document.body.appendChild(winScreen);
-
+    
     var startButton = document.querySelector('button')
-    startButton.addEventListener('click', buildGameScreen)
+    startButton.addEventListener('click', buildGameScreen);
+
+    var winScreenScore = document.querySelector('.final-score')
+    winScreenScore.innerHTML = game.finalScore();
+
+    
 }
 
 function removePreviousScreen(){ // DOM Element Remover
@@ -93,3 +98,4 @@ function removePreviousScreen(){ // DOM Element Remover
 };
 
 window.addEventListener('load', buildSplashScreen);
+

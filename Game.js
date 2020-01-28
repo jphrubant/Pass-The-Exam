@@ -84,11 +84,11 @@ Game.prototype.didCollide = function(booksArray){
     if ((collideLeft || collideRight) && (collideTop || collideBottom)){
         this.updateScore();
         book.x += 2000; // move them out of the screen;
-        return collision =  true;
+        //return collision =  true;
     } 
-    else {
-        return collision = false;
-    }
+    //else {
+        //return collision = false;
+   // }
     }.bind(this));
 
     return collision;
@@ -101,3 +101,8 @@ Game.prototype.updateScore = function () {
     return this.booksRead;
 };
 
+Game.prototype.finalScore = function () {
+    var aScore = this.booksRead;
+    console.log(aScore);
+    return aScore;
+}

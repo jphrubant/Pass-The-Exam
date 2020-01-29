@@ -38,8 +38,8 @@ Game.prototype.startLoop = function(){
         this.player.create();
         this.player.wallCollision();
         
-        if(Math.random() > 0.99){
-            var randomX = Math.random() * this.canvas.width;
+        if(Math.random() > 0.98){
+            var randomX = Math.random() * (this.canvas.width - 60);
             var newBook = new Book(this.canvas, randomX, 2);
             //book.wallCollision(newBook); // this needs to be fixed
             this.booksArray.push(newBook);
@@ -52,11 +52,16 @@ Game.prototype.startLoop = function(){
             book.updatePosition();
         });    
 
-        this.booksArray = this.booksArray.filter(function(book){
+        this.booksArray = this.booksArray.filter(function(book){ // loop stopper - consider including counter 
             return book.isInScreen(); 
         });
+
+        var score = document.querySelector('.score');
+        if(score !== null){
+
+            requestAnimationFrame(loop);
+        }
         
-        requestAnimationFrame(loop);
     }.bind(this);
 
     loop();
@@ -100,7 +105,9 @@ Game.prototype.didCollide = function(booksArray){
 Game.prototype.updateScore = function () {
     this.booksRead ++;
     var score = document.querySelector('.score');
-    score.innerHTML = this.booksRead;
+    if(score !== null){                   // consider refactoring
+        score.innerHTML = this.booksRead;
+    } 
     return this.booksRead;
 };
 

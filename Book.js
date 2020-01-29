@@ -3,16 +3,17 @@
 function Book(canvas, x, speed){
     this.canvas = canvas;
     this.ctx = this.canvas.getContext('2d');
-    this.ctx.imageSmoothingEnabled = false;
     this.img = null;
-    this.size = 80;
+    this.size = 50;
     this.x = x + this.size; 
     this.y = 0 - this.size;
     this.speed = speed;
 };
 
 Book.prototype.create = function() {
-    this.ctx.drawImage(bookImg, this.x, this.y, this.size, this.size);
+    this.img = new Image(); 
+    this.img.src = "images/brownbook.png";
+    this.ctx.drawImage(this.img, this.x, this.y, this.size, this.size);
  };
 
 Book.prototype.updatePosition = function (){

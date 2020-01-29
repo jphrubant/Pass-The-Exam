@@ -67,7 +67,7 @@ h1{
   width: 300px;
 }
 
-.form-div{
+.cta-div{
   margin-top:50px;
   display: flex;
   align-items: center;
@@ -77,21 +77,26 @@ h1{
 #name{ 
   padding: 20px; 
   width: 150px;
-  margin-right: 5px;
+  margin-right: 10px;
   
   background-color: ivory;
   font-size: 25px;;
   font-family: 'dk_crayon_crumbleregular';
   font-weight: bold;
+  border: none;
   border-radius: 10% / 40%;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
 }
 
 .start-button {
-  background-color: ivory; 
+  background-color:transparent;
+  color: ivory;
+  border: 1px solid ivory;
+  /* text-decoration: underline; */
   
-  margin-left: 5px;
+
+  margin-left: 10px;
   padding: 20px; 
   width: 150px;
 
@@ -176,6 +181,22 @@ canvas{
   background-size: cover;
   background-position: center;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.win-screen-button{
+  background-color: ivory;
+  color: grey;
+  margin-top: 100px;
+  padding: 20px; 
+  width: 150px;
+
+  font-size: 25px;;
+  font-family: 'dk_crayon_crumbleregular';
+  font-weight: bold;
+  border-radius: 10% / 40%;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+  cursor: pointer;
 }
 
 .final-score{

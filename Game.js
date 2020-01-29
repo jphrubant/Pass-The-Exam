@@ -10,7 +10,7 @@ function Game(){
     this.booksRead = 0;
 }
 
-Game.prototype.start = function(){
+Game.prototype.startGame = function(){    // Function to initiate player.
     this.canvas = document.querySelector('canvas');
     this.ctx = this.canvas.getContext('2d');
     this.player = new Player(this.canvas);
@@ -32,31 +32,31 @@ Game.prototype.start = function(){
     this.startLoop();
 };
 
-Game.prototype.startLoop = function(){
+Game.prototype.startLoop = function(){ // Function to start gaming loop.
     var loop = function(){
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.player.create();
         this.player.wallCollision();
         
         if(Math.random() > 0.98){
-            var randomX = Math.random() * (this.canvas.width - 60);
+            var randomX = Math.random() * this.canvas.width; // fix
             var newBook = new Book(this.canvas, randomX, 2);
-            //book.wallCollision(newBook); // this needs to be fixed
             this.booksArray.push(newBook);
-        }
-
-        this.didCollide(this.booksArray);
+        };
 
         this.booksArray.forEach(function(book){
             book.create();
             book.updatePosition();
+            book.wallCollision();
         });    
 
-        this.booksArray = this.booksArray.filter(function(book){ // loop stopper - consider including counter 
+        this.didCollide(this.booksArray);
+
+        this.booksArray = this.booksArray.filter(function(book){ 
             return book.isInScreen(); 
         });
 
-        var score = document.querySelector('.score');
+        var score = document.querySelector('.score'); // loop stopper - refactor by moving counter here and invoking winScreen 
         if(score !== null){
 
             requestAnimationFrame(loop);
@@ -67,9 +67,8 @@ Game.prototype.startLoop = function(){
     loop();
 }
 
-Game.prototype.didCollide = function(booksArray){
-    var collision = false;
-
+Game.prototype.didCollide = function(booksArray){ // Function to check if player collided with any books.
+    
     var playerLeft =  this.player.x;
     var playerRight = this.player.x + this.player.size;
     var playerTop = this.player.y;
@@ -91,32 +90,21 @@ Game.prototype.didCollide = function(booksArray){
         this.updateScore();
         pageTurn.volume = 0.5;
         pageTurn.play();
-        book.x += 2000; // move them out of the screen;
-        //return collision =  true;
-    } 
-    //else {
-        //return collision = false;
-   // }
+        book.x += 2000; // Turn this into a function //Moves books out of the screen to prevent score from increasing for the whole collision length;
+        } 
+  
     }.bind(this));
-
-    return collision;
 };
 
-Game.prototype.updateScore = function () {
+Game.prototype.updateScore = function () { // Function to update score when player collided with book.
     this.booksRead ++;
     var score = document.querySelector('.score');
-    if(score !== null){                   // consider refactoring
-        score.innerHTML = this.booksRead;
+    if(score !== null){                   // consider refactoring - should get fixed by moving counter to Game.js and having a gameScreenRemover function
+        score.innerHTML = this.booksRead; // consider refactoring
     } 
-    return this.booksRead;
+    return this.booksRead;    
 };
 
-Game.prototype.finalScore = function () {
-    var final = this.booksRead;
-
-    if(final === 0){
-
-    }
-
-    return final;
+Game.prototype.finalScore = function () { // Function to display final score on Win Screen
+    return this.booksRead;
 }

@@ -64,7 +64,7 @@ function buildGameScreen(playerName){ // Build Game Screen
     document.body.appendChild(gameScreen);
 
     var countDown = document.querySelector(".countDown");
-    var countdownToWinScreen = 61;
+    var countdownToWinScreen = 60;
     var timeoutID;
    
     function printCounter(){
@@ -80,10 +80,10 @@ function buildGameScreen(playerName){ // Build Game Screen
     printCounter(); 
     
     game = new Game();
-    game.start();
+    game.startGame();
 };    
 
-function buildWinScreen(playerName){
+function buildWinScreen(playerName){ // Build Win Screen
     removePreviousScreen();
     
     var winScreen = buildDomElement(`
@@ -99,7 +99,7 @@ function buildWinScreen(playerName){
     document.body.appendChild(winScreen);
 
     applause.volume = 0.5;
-    applause.play();2
+    applause.play();
     
     var winScreenScore = document.querySelector('.final-score')
     winScreenScore.innerHTML = game.finalScore();

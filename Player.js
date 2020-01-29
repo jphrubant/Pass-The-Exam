@@ -11,13 +11,13 @@ function Player (canvas) {
     this.speed = 5;
 };
 
-Player.prototype.create = function() {
+Player.prototype.create = function() { // Function to create the player on screen
     this.img = new Image(); 
     this.img.src = "images/adult-emoji.png";
     this.ctx.drawImage(this.img, this.x , this.y, this.size, this.size);
 };
 
-Player.prototype.setDirection = function (direction){
+Player.prototype.setDirection = function (direction){ // Function to define the movement direction
     if (direction === "left"){
         this.direction =  -1;
     } 
@@ -29,11 +29,11 @@ Player.prototype.setDirection = function (direction){
     }
 }
 
-Player.prototype.updatePosition = function() {
+Player.prototype.updatePosition = function() { // Function to update the position according to speed
     this.x = this.x + this.direction * this.speed; 
   };
 
-Player.prototype.wallCollision = function(){
+Player.prototype.wallCollision = function(){ // Function to keep player within the canvas width
     this.updatePosition();
 
     var leftWall = 0;

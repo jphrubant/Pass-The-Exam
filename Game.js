@@ -68,7 +68,6 @@ Game.prototype.startLoop = function(){ // Function to start gaming loop.
 }
 
 Game.prototype.didCollide = function(booksArray){ // Function to check if player collided with any books.
-    
     var playerLeft =  this.player.x;
     var playerRight = this.player.x + this.player.size;
     var playerTop = this.player.y;

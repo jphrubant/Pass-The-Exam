@@ -25,9 +25,6 @@ Book.prototype.isInScreen = function(){ // Function to remove books once out of 
  };
 
 Book.prototype.wallCollision = function(book){ // Function to remove books that do not fit the game space.
-
-    console.log(book);
-
     var leftWall = 0 + this.size;
     var rightWall = this.canvas.width - this.size;
 

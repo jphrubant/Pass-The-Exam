@@ -38,7 +38,7 @@ Game.prototype.startLoop = function(){
         this.player.create();
         this.player.wallCollision();
         
-        if(Math.random() > 0.98){
+        if(Math.random() > 0.99){
             var randomX = Math.random() * this.canvas.width;
             var newBook = new Book(this.canvas, randomX, 2);
             //book.wallCollision(newBook); // this needs to be fixed

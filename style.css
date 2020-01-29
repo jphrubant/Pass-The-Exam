@@ -67,11 +67,19 @@ h1{
   width: 300px;
 }
 
-#username{ 
-  
-  padding: 20px; 
-  width: 200px;
+.form-div{
+  margin-top:50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+#name{ 
+  padding: 20px; 
+  width: 150px;
+  margin-right: 5px;
+  
+  background-color: ivory;
   font-size: 25px;;
   font-family: 'dk_crayon_crumbleregular';
   font-weight: bold;
@@ -82,9 +90,10 @@ h1{
 
 .start-button {
   background-color: ivory; 
-  margin-top: 80px;
+  
+  margin-left: 5px;
   padding: 20px; 
-  width: 200px;
+  width: 150px;
 
   font-size: 25px;;
   font-family: 'dk_crayon_crumbleregular';

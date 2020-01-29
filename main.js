@@ -2,10 +2,11 @@
 
 var pageTurn = new Audio("audio/BookFlip13.wav");
 var applause = new Audio("audio/applause.wav")
-
 var bookImg;
+
 var game;
 var splashScreen;
+var username;
 var gameScreen;
 var winScreen;
 var divElement = document.createElement("div");
@@ -24,15 +25,16 @@ function buildSplashScreen(){  // Splash Screen Dom Generator
         <div class="splash-screen-div">
             <h1>PASS THE EXAM</h1>
             <p>Prepare for your next exam by reading as many books as possible. <br><br> Be quick, you only have 60 seconds!</p>
-
-
+            
             <form>
-                <label for="username">Enter your name below to start studying:</label><br>
-                <input id="username" type="text" placeholder="type your name here" value=""><br>
-                <button type="button" class="start-button">Start Learning</button>
+                
+                    <label for="name">Enter your name below to start studying:</label>
+                 <div class="form-div">
+                    <input id="name" name="name" type="text" placeholder="Type Name" value="">
+                    <button type="submit" class="start-button">Let's learn!</button>
+                </div>
             </form>
 
-            
         </div>
     </main>
     `)
@@ -40,11 +42,13 @@ function buildSplashScreen(){  // Splash Screen Dom Generator
     document.body.appendChild(splashScreen);
 
     var startButton = document.querySelector('button')
-
-    startButton.addEventListener('click', buildGameScreen)
+    startButton.addEventListener('click', function(){
+        username = document.querySelector('#name').value;
+        buildGameScreen(username)
+    })
 };
 
-function buildGameScreen(){ // Build Game Screen
+function buildGameScreen(playerName){ // Build Game Screen
     removePreviousScreen()
 
     gameScreen = buildDomElement(`
@@ -52,7 +56,7 @@ function buildGameScreen(){ // Build Game Screen
     
         <div class="game-div">
             <div class='counters-div'>
-                <p>Books Read: <span class="score">0</span></p>
+                <p>${playerName}, so far you read: <span class="score">0</span></p>
                 <h1>LIBRARY</h1>
                 <p class="countDown"></p> 
             </div>
@@ -64,16 +68,18 @@ function buildGameScreen(){ // Build Game Screen
     document.body.appendChild(gameScreen);
 
     var countDown = document.querySelector(".countDown");
-    var countdownToWinScreen = 61;
+    var countdownToWinScreen = 10;
+    var timeoutID;
    
     function printCounter(){
         countdownToWinScreen--;
         countDown.innerHTML = `Countdown: ${countdownToWinScreen}`;
         if (countdownToWinScreen !== 0){
-        var timeoutID = setTimeout(printCounter, 1000);
+        timeoutID = setTimeout(printCounter, 1000);
             } else if (countdownToWinScreen === 0){
+                buildWinScreen(username);
                 clearTimeout(timeoutID)
-                buildWinScreen();
+                console.log(username)
             } 
         }
     printCounter(); 
@@ -82,29 +88,31 @@ function buildGameScreen(){ // Build Game Screen
     game.start();
 };    
 
-function buildWinScreen(){
+function buildWinScreen(playerName){
     removePreviousScreen()
 
     winScreen = buildDomElement(`
     <main class="win-screen-main">
         <div class="win-screen-div">
             <h1>YOU PASSED THE EXAM!!!</h1>
-            <p>WOW! You managed to read <span class="final-score">0</span> books</p>
+            <p>WOW!${username}, you managed to read <span class="final-score">0</span> books</p>
             <button type="button" class="start-button">Go back to studyuing</button>
         </div>
     </main>
     `);
 
-    document.body.appendChild(winScreen);
+    document.body.appendChild(winScreen)
 
     applause.volume = 0.5;
     applause.play();
     
-    var startButton = document.querySelector('button')
-    startButton.addEventListener('click', buildGameScreen);
-
     var winScreenScore = document.querySelector('.final-score')
     winScreenScore.innerHTML = game.finalScore();
+
+    var startButton = document.querySelector('button')
+    startButton.addEventListener('click', buildGameScreen(username));
+
+    
 }
 
 function removePreviousScreen(){ // DOM Element Remover

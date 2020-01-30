@@ -8,7 +8,7 @@ function Player (canvas) {
     this.y = 295;
     this.size = 70;
     this.direction = 0;
-    this.speed = 5;
+    this.speed = 4;
 };
 
 Player.prototype.create = function() { // Function to create the player on screen

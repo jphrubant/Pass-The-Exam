@@ -2,12 +2,15 @@
 
 var pageTurn = new Audio("audio/BookFlip13.wav");
 var applause = new Audio("audio/applause.wav")
+var negative = new Audio("audio/negative.flac")
 var game;
 var splashScreen;
 var username;
 var gameScreen;
 var winScreen;
 var divElement = document.createElement("div");
+
+var countdownToWinScreen = 60;
 
 function buildDomElement(htmlStructure){        // Dom Element Builder 
     divElement.innerHTML = htmlStructure;
@@ -61,7 +64,7 @@ function buildGameScreen(playerName){       // Build Game Screen
     document.body.appendChild(gameScreen);
 
     var countDown = document.querySelector(".countDown");
-    var countdownToWinScreen = 2;
+    
     var timeoutID;
     function printCounter(){
         countdownToWinScreen--;

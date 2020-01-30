@@ -2,7 +2,6 @@
 
 var pageTurn = new Audio("audio/BookFlip13.wav");
 var applause = new Audio("audio/applause.wav")
-var bookImg;
 
 var game;
 var splashScreen;
@@ -28,7 +27,7 @@ function buildSplashScreen(){  // Splash Screen Dom Generator
                 <label for="name">Enter your name below to start studying:</label>
                     <div class="cta-div">
                         <input id="name" name="name" type="text" placeholder="Type Name">
-                        <button type="submit" class="start-button">Let's learn!</button>
+                        <button type="button" class="start-button">Let's learn!</button>
                     </div>
             </form>
         </div>

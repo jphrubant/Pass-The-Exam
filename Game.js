@@ -27,63 +27,33 @@ Game.prototype.startGame = function(){            // Function to initiate player
             this.player.setDirection("stop");
         }
       };
-    
     window.addEventListener("keydown", this.movement.bind(this));
-
     this.startLoop();
 };
 
 Game.prototype.startLoop = function(){      // Function to start gaming loop
-   
     var loop = function(){
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.player.create();
         this.player.wallCollision();
         
-        if(Math.random() > 0.98){
-            var randomX = Math.random() * this.canvas.width; 
-            var newBook = new Book(this.canvas, randomX, 2);
-            this.booksArray.push(newBook);
-        };
+        this.elementInstanciator(this.booksArray, 0.98, Book, 2);
+        this.elementInstanciator(this.enemiesArray, 0.99, Enemy, 1);
 
-        if(Math.random() > 0.99){
-            var randomX = Math.random() * this.canvas.width; 
-            var newEnemy = new Enemy(this.canvas, randomX, 1);
-            this.enemiesArray.push(newEnemy);
-        };
-
-        this.booksArray.forEach(function(book){
-            book.create();
-            book.updatePosition();
-            book.wallCollision();
-        });    
-
-        this.enemiesArray.forEach(function(enemy){
-            enemy.create();
-            enemy.updatePosition();
-            enemy.wallCollision();
-        });   
+        this.arrayUpdater(this.booksArray);
+        this.arrayUpdater(this.enemiesArray);
 
         this.didCollideBook(this.booksArray);
-
         this.didCollideEnemy(this.enemiesArray);
 
-        this.booksArray = this.booksArray.filter(function(book){ 
-            return book.isInScreen(); 
-        });
-
-        this.enemiesArray = this.enemiesArray.filter(function(enemy){ 
-            return enemy.isInScreen(); 
-        });
+        this.arrayFilter(this.booksArray);
+        this.arrayFilter(this.enemiesArray);
 
         var score = document.querySelector('.score'); 
         if(score !== null){
-
             requestAnimationFrame(loop);
-        }
-        
+        } 
     }.bind(this);
-
     loop();
 }
 
@@ -154,4 +124,26 @@ Game.prototype.updateScore = function () {   // Function to update score when pl
 
 Game.prototype.finalScore = function () {   // Function to display final score on Win Screen
     return this.booksRead;
+};
+
+Game.prototype.arrayUpdater = function (array){ // Function to create, update and check collisoins of elements
+    array.forEach(function(arrayElement){
+        arrayElement.create();
+        arrayElement.updatePosition()
+        arrayElement.wallCollision();
+    })
+}
+
+Game.prototype.elementInstanciator = function(array, probability, Element, speed){ // Function to randomly create elements
+    if(Math.random() > probability){
+        var randomX = Math.random() * this.canvas.width; 
+        var newElement = new Element(this.canvas, randomX, speed);
+        array.push(newElement);
+    };
+}
+
+Game.prototype.arrayFilter = function(array){ // Function to filter elements out of array that are out of canvas
+    array = array.filter(function(element){ 
+        return element.isInScreen(); 
+    });
 }

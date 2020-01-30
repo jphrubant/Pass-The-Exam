@@ -7,9 +7,9 @@ var game;
 var splashScreen;
 var username;
 var gameScreen;
+var countdownToWinScreen;
 var winScreen;
 var divElement = document.createElement("div");
-var countdownToWinScreen = 61;
 
 function buildDomElement(htmlStructure){        // Dom Element Builder 
     divElement.innerHTML = htmlStructure;
@@ -57,7 +57,7 @@ function buildGameScreen(playerName){       // Build Game Screen
                 <p class="countDown"></p> 
             </div>
         <div>
-        <canvas height="415" width="750"></canvas>
+        <canvas height="445" width="770"></canvas>
     </main>
     `)
 

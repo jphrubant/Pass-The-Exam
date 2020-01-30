@@ -5,7 +5,7 @@ function Player (canvas) {
     this.ctx = this.canvas.getContext('2d');
     this.img = null;
     this.x = canvas.width / 2;
-    this.y = 340;
+    this.y = 370;
     this.size = 70;
     this.direction = 0;
     this.speed = 4;
@@ -38,7 +38,6 @@ Player.prototype.wallCollision = function(){ // Function to keep player within t
 
     var leftWall = 0;
     var rightWall = this.canvas.width - this.size;
-
     if(this.x < leftWall){
         this.direction = 1;
     } 

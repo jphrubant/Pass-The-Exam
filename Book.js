@@ -4,7 +4,7 @@ function Book(canvas, x, speed){
     this.canvas = canvas;
     this.ctx = this.canvas.getContext('2d');
     this.img = null;
-    this.size = 50;
+    this.size = 70;
     this.x = x; 
     this.y = 0 - this.size;
     this.speed = speed;

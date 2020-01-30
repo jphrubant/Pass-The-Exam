@@ -10,12 +10,12 @@ var gameScreen;
 var winScreen;
 var divElement = document.createElement("div");
 
-function buildDomElement(htmlStructure){ // Dom Element Builder 
+function buildDomElement(htmlStructure){        // Dom Element Builder 
     divElement.innerHTML = htmlStructure;
     return divElement;
 };
 
-function buildSplashScreen(){  // Splash Screen Dom Generator
+function buildSplashScreen(){       // Splash Screen Dom Generator
     removePreviousScreen()
     
     splashScreen = buildDomElement(`
@@ -43,12 +43,11 @@ function buildSplashScreen(){  // Splash Screen Dom Generator
     });
 };
 
-function buildGameScreen(playerName){ // Build Game Screen
+function buildGameScreen(playerName){       // Build Game Screen
     removePreviousScreen()
 
     gameScreen = buildDomElement(`
     <main class="game-screen-main">
-    
         <div class="game-div">
             <div class='counters-div'>
                 <p>${playerName}, you read: <span class="score">0</span></p>
@@ -70,10 +69,11 @@ function buildGameScreen(playerName){ // Build Game Screen
         countdownToWinScreen--;
         countDown.innerHTML = `Countdown: ${countdownToWinScreen}`;
         if (countdownToWinScreen !== 0){
-        timeoutID = setTimeout(printCounter, 1000);
-            } else if (countdownToWinScreen === 0){
-                clearTimeout(timeoutID);
-                buildWinScreen(username);
+            timeoutID = setTimeout(printCounter, 1000);
+            } 
+        else if (countdownToWinScreen === 0){
+            clearTimeout(timeoutID);
+            buildWinScreen(username);
             } 
         }
     printCounter(); 
@@ -82,7 +82,7 @@ function buildGameScreen(playerName){ // Build Game Screen
     game.startGame();
 };    
 
-function buildWinScreen(playerName){ // Build Win Screen
+function buildWinScreen(playerName){        // Build Win Screen
     removePreviousScreen();
     
     var winScreen = buildDomElement(`
@@ -109,7 +109,7 @@ function buildWinScreen(playerName){ // Build Win Screen
     });
 }
 
-function removePreviousScreen(){ // DOM Element Remover
+function removePreviousScreen(){             // DOM Element Remover
     divElement.remove();
 };
 

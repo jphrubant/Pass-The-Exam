@@ -64,9 +64,8 @@ function buildGameScreen(playerName){       // Build Game Screen
     document.body.appendChild(gameScreen);
 
     var countDown = document.querySelector(".countDown");
-    
     var timeoutID;
-    countdownToWinScreen = 61
+    countdownToWinScreen = 61;
     function printCounter(){
         countdownToWinScreen--;
         countDown.innerHTML = `Countdown: ${countdownToWinScreen}`;
@@ -77,7 +76,7 @@ function buildGameScreen(playerName){       // Build Game Screen
             clearTimeout(timeoutID);
             buildWinScreen(username);
             } 
-        }
+        };
     printCounter(); 
     
     game = new Game();

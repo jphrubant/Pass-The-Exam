@@ -35,7 +35,7 @@ Player.prototype.updatePosition = function() { // Function to update the positio
 
 Player.prototype.wallCollision = function(){ // Function to keep player within the canvas width
     this.updatePosition();
-
+    
     var leftWall = 0;
     var rightWall = this.canvas.width - this.size;
     if(this.x < leftWall){

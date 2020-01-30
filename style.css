@@ -21,7 +21,6 @@ html {
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 html,
@@ -33,30 +32,26 @@ h1{
   font-size: 60px;
 }
 
-/* *********** SPLASHSCREEN MAIN ********** */
+/* *********** SPLASHSCREEN ********** */
 
 .splash-screen-main {
   height: 100vh;
+  justify-content: center;
   padding: 20px;
   text-align: center;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
   background-image: url('images/bookshelf.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  
 }
 
 .splash-screen-div{
   height: 550px;
   width: 820px;
-  margin-top: 100px;
   color: ivory;
-  
   background-image: url('images/chalkboard.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -79,7 +74,6 @@ h1{
   padding: 20px; 
   width: 150px;
   margin-right: 10px;
-  
   background-color: ivory;
   font-size: 25px;;
   font-family: 'dk_crayon_crumbleregular';
@@ -94,31 +88,27 @@ h1{
   background-color:transparent;
   color: ivory;
   border: 1px solid ivory;
-  
   margin-left: 10px;
   padding: 20px; 
   width: 150px;
-
   font-size: 25px;;
   font-family: 'dk_crayon_crumbleregular';
   font-weight: bold;
   border-radius: 10% / 40%;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-
   cursor: pointer;
 }
 
-/* ******* GAME SCREEN ******** */
+/* *********** GAMESCREEN ********** */
 
 .game-screen-main {
   height: 100vh;
+  justify-content: center;
   padding: 20px;
   text-align: center;
-
   display: flex;
   flex-direction: column;
   align-items: center;  
-  
   background-image: url('images/bookshelf.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -128,15 +118,12 @@ h1{
 .game-div{
   height: 550px;
   width: 820px;
-  margin-top: 100px;
   color: ivory;
-  
   background-image: url('images/chalkboard.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-
   display: flex;
   flex-direction: column;
 }
@@ -147,20 +134,20 @@ h1{
 }
 
 canvas{
-  margin: -60px;
+  border: black 1px solid;
 } 
 
-/* ******* WIN SCREEN ******** */
+/* *********** WINSCREEN ********** */
 
 .win-screen-main{
   height: 100vh;
+  justify-content: center;
   padding: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;  
-  
-  background-image: url('images/chalkboard.png');
+  background-image: url('images/bookshelf.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -173,9 +160,7 @@ canvas{
 .win-screen-div{
   height: 550px;
   width: 820px;
-  margin-top: 100px;
   color: ivory;
-  
   background-image: url('images/chalkboard.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -189,13 +174,11 @@ canvas{
   margin-top: 100px;
   padding: 20px; 
   width: 150px;
-
   font-size: 25px;;
   font-family: 'dk_crayon_crumbleregular';
   font-weight: bold;
   border-radius: 10% / 40%;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-
   cursor: pointer;
 }
 

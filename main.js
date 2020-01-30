@@ -9,8 +9,7 @@ var username;
 var gameScreen;
 var winScreen;
 var divElement = document.createElement("div");
-
-var countdownToWinScreen = 60;
+var countdownToWinScreen = 61;
 
 function buildDomElement(htmlStructure){        // Dom Element Builder 
     divElement.innerHTML = htmlStructure;
@@ -24,7 +23,8 @@ function buildSplashScreen(){       // Splash Screen Dom Generator
     <main class="splash-screen-main">
         <div class="splash-screen-div">
             <h1>PASS THE EXAM</h1>
-            <p>Prepare for your next exam by reading as many books as possible. <br><br> Be quick, you only have 60 seconds!</p>
+            <p>Prepare for your next exam by reading as many books as possible in 60 seconds.<br><br> 
+            Beware of the dunce caps, they will remove 5 seconds of game time</p>
             <form>
                 <label for="name">Enter your name below to start studying:</label>
                     <div class="cta-div">
@@ -53,11 +53,11 @@ function buildGameScreen(playerName){       // Build Game Screen
         <div class="game-div">
             <div class='counters-div'>
                 <p>${playerName}, you read: <span class="score">0</span></p>
-                <h1>LIBRARY</h1>
+                <h1 class="game-h1">LIBRARY</h1>
                 <p class="countDown"></p> 
             </div>
         <div>
-        <canvas height="370" width="750"></canvas>
+        <canvas height="415" width="750"></canvas>
     </main>
     `)
 
@@ -66,13 +66,14 @@ function buildGameScreen(playerName){       // Build Game Screen
     var countDown = document.querySelector(".countDown");
     
     var timeoutID;
+    countdownToWinScreen = 61
     function printCounter(){
         countdownToWinScreen--;
         countDown.innerHTML = `Countdown: ${countdownToWinScreen}`;
-        if (countdownToWinScreen !== 0){
+        if (countdownToWinScreen >= 0){
             timeoutID = setTimeout(printCounter, 1000);
             } 
-        else if (countdownToWinScreen === 0){
+        else if (countdownToWinScreen <= 0){
             clearTimeout(timeoutID);
             buildWinScreen(username);
             } 
@@ -91,7 +92,7 @@ function buildWinScreen(playerName){        // Build Win Screen
         <div class="win-screen-div">
             <h1>YOU PASSED THE EXAM!!!</h1>
             <p>WOW! ${playerName}, you managed to read <span class="final-score">0</span> books</p>
-            <button type="win-screen-button" class="win-screen-button">Go back to studyuing</button>
+            <button class="win-screen-button">Go back to studyuing</button>
         </div>
     </main>
     `);

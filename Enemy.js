@@ -3,7 +3,7 @@
 function Enemy(canvas, x, speed){
     Book.call(this, canvas, x, speed)
     this.img = null;
-    this.size = 40;
+    this.size = 50;
     this.y = 0 - this.size;
 }
 

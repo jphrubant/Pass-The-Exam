@@ -36,7 +36,7 @@ h1{
 /* *********** SPLASHSCREEN MAIN ********** */
 
 .splash-screen-main {
-  height: 900px;
+  height: 100vh;
   padding: 20px;
   text-align: center;
 
@@ -48,6 +48,7 @@ h1{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  
 }
 
 .splash-screen-div{
@@ -112,7 +113,7 @@ h1{
 /* ******* GAME SCREEN ******** */
 
 .game-screen-main {
-  height: 900px;
+  height: 100vh;
   padding: 20px;
   text-align: center;
 
@@ -154,7 +155,7 @@ canvas{
 /* ******* WIN SCREEN ******** */
 
 .win-screen-main{
-  height: 900px;
+  height: 100vh;
   padding: 20px;
   text-align: center;
   display: flex;

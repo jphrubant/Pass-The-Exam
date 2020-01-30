@@ -52,7 +52,7 @@ function buildGameScreen(playerName){ // Build Game Screen
     
         <div class="game-div">
             <div class='counters-div'>
-                <p>${playerName}, so far you read: <span class="score">0</span></p>
+                <p>${playerName}, you read: <span class="score">0</span></p>
                 <h1>LIBRARY</h1>
                 <p class="countDown"></p> 
             </div>

@@ -24,7 +24,7 @@ function buildSplashScreen(){       // Splash Screen Dom Generator
         <div class="splash-screen-div">
             <h1>PASS THE EXAM</h1>
             <p>Prepare for your next exam by reading as many books as possible in 60 seconds.<br><br> 
-            Beware of the dunce caps, they will remove 5 seconds of game time</p>
+            Beware of the clocks, they will remove 5 seconds of game time.</p>
             <form>
                 <label for="name">Enter your name below to start studying:</label>
                     <div class="cta-div">

@@ -2,7 +2,7 @@
 
 var pageTurn = new Audio("audio/BookFlip13.wav");
 var applause = new Audio("audio/applause.wav")
-var negative = new Audio("audio/negative.flac")
+var vocal = new Audio("audio/vocal.wav")
 var game;
 var splashScreen;
 var username;

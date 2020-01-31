@@ -105,8 +105,8 @@ Game.prototype.didCollideEnemy = function(enemiesArray){   // Function to check 
   
     if ((collideLeft || collideRight) && (collideTop || collideBottom)){
         countdownToWinScreen -= 5;
-        negative.volume = 0.5;
-        negative.play();
+        vocal.volume = 0.5;
+        vocal.play();
         enemy.x += 2000; 
         } 
   

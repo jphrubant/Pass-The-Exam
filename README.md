@@ -2,20 +2,22 @@
 
 ```
 Description:
-Pass The Exam is a game where the player needs to ‘read’(catch) at least 20 books in order to pass the ‘exam’. The books are falling from above and the player has to collide with them on a left to right axis. 
+Pass The Exam is a game where the player needs to ‘read’(catch) as many books as possible within 60 seconds.
+If the player collides with a clock, 5 seconds will be taken off the game time.
+In the game, the player can never lose but can always do better.
 ```
 
 ## MVP (DOM - CANVAS) 
 
 ```
-This is a game where a player has to collide with 20 items.
+The player has to catch as many books as possible in 60 seconds.
 ```
 
 ## Backlog
 ```
 - Spinning books 
 - Animated player
-- Add sound upon collision.
+- Add levels
 - Decreasing score when books fall out of the screen
 - Game over if score is < 0 + Game over screen.
 - Have different books with different speed/scores
@@ -25,31 +27,41 @@ This is a game where a player has to collide with 20 items.
 
 ```
 Main.js:  
+- buildDomElement(){}
 - buildSplashScreen(){} 
 - buildGameScreen(){}
 - buildWinScreen(){}
+- removePreviousScreen(){}
 
 Game.js
 - Game(){}
-- game.prototype.create(){}
-- game.prototype.startLoop(){} 
-- game.prototype.updateScore(){}
-- game.prototype.hasWon(){}
+- Game.prototype.startGame(){}
+- Game.prototype.startLoop(){}
+- Game.prototype.didCollideBook(){}
+- Game.prototype.didCollideEnemy(){}
+- Game.prototype.updateScore(){}
+- Game.prototype.finalScore(){}
+- Game.prototype.arrayUpdater(){}
+- Game.prototype.elementInstanciator(){} 
+- Game.prototype.arrayFilter(){}
 
 Player.js: 
 - Player(){}
-- player.prototype.create(){}
-- player.prototype.update(){}
-- player.prototype.movement(){}
-- player.prototype.screenCollision(){}
-- player.prototype.bookCollision(){}
+- Player.prototype.create(){}
+- Player.prototype.setDirection(){}
+- Player.prototype.updatePosition(){}
+- Player.prototype.wallCollision(){}
 	
 Books.js:  
 - Book(){}
-- book.prototype.create(){}
-- book.prototype.update(){}
-- book.prototype.didCollide(){}
-- book.prototype.isInScreen(){}
+- Book.prototype.create(){}
+- Book.prototype.updatePosition(){}
+- Book.prototype.isInScreen(){}
+- Book.prototype.wallCollision(){}
+
+Enemy.js:
+- Enemy(){}
+- Enemy.prototype.create(){}
 ```
 
 ## States and State Transitions
@@ -59,15 +71,15 @@ Definition of the different states and their transition
 
  - Splash Screen gameScreen
     function createSplashScreen(){}
-    function startGame(){}
+    function removePreviousScreen(){}
 
 - Game Screen
     function createGameScreen(){}
-    game.prototype.hasWon(){}
+    function removePreviousScreen(){}
 
 - Win Screen
     function createWinScreen(){}
-    function startGame(){}
+    function removePreviousScreen(){}
 ```
 
 ## Task
@@ -108,7 +120,6 @@ Definition of the different states and their transition
 
 - Game.jsgame.prototype.updateScore(){}
 
-- Game.jsgame.prototype.hasWon(){}
 ```
  
 ## Links
@@ -123,5 +134,5 @@ Definition of the different states and their transition
 
 - Slides
 
-URls for the project presentation (slides) Link Slides.com
+    https://docs.google.com/presentation/d/1AKM3zbthBogAFCACLj8Hs0m68whEW3fjn9G5P19sw5A/edit
 ```

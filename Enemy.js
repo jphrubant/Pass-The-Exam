@@ -15,7 +15,3 @@ Enemy.prototype.create = function() { // Function to create the enemies on scree
     this.img.src = "images/clock.png";
     this.ctx.drawImage(this.img, this.x, this.y, this.size, this.size);
  };
-
-
-
- 

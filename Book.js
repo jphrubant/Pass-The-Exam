@@ -14,6 +14,7 @@ Book.prototype.create = function() { // Function to create the books on screen.
     this.img = new Image(); 
     this.img.src = "images/brownbook.png";
     this.ctx.drawImage(this.img, this.x, this.y, this.size, this.size);
+    console.log('BOOKS BOOKS' )
  };
 
 Book.prototype.updatePosition = function (){ //Function to update book position according to speed.

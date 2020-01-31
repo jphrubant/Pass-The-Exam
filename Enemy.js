@@ -11,7 +11,14 @@ Enemy.prototype = Object.create(Book.prototype);
 Enemy.prototype.constructor = Enemy;
 
 Enemy.prototype.create = function() { // Function to create the enemies on screen.
-    this.img = new Image(); 
+    this.img = new Image();
+    this.img.onload = function(){console.log('loaded');} 
     this.img.src = "images/clock.png";
+    
     this.ctx.drawImage(this.img, this.x, this.y, this.size, this.size);
  };
+
+ window.onload = (event) => {
+    
+  };
+ 

@@ -2,7 +2,8 @@
 
 ```
 Description:
-Pass The Exam is a game where the player needs to ‘read’(catch) at least 20 books in order to pass the ‘exam’. The books are falling from above and the player has to collide with them on a left to right axis. 
+Pass The Exam is a game where the player needs to ‘read’(catch) as many books as possible within 60 seconds. If the player touches a clock, 5 seconds of gaming time is removed from the countdown.
+The books are falling from top to bottom and the player has to collide with them on a left to right axis. 
 ```
 
 ## MVP (DOM - CANVAS) 
@@ -15,7 +16,6 @@ This is a game where a player has to collide with 20 items.
 ```
 - Spinning books 
 - Animated player
-- Add sound upon collision.
 - Decreasing score when books fall out of the screen
 - Game over if score is < 0 + Game over screen.
 - Have different books with different speed/scores
@@ -25,103 +25,56 @@ This is a game where a player has to collide with 20 items.
 
 ```
 Main.js:  
+- buildDomeElement(){}
 - buildSplashScreen(){} 
 - buildGameScreen(){}
 - buildWinScreen(){}
+-removwPreviousScreen(){}
 
 Game.js
-- Game(){}
-- game.prototype.create(){}
-- game.prototype.startLoop(){} 
-- game.prototype.updateScore(){}
-- game.prototype.hasWon(){}
+- Game{}
+- didCollideBook(){}
+- didCollideEnemy(){} 
+- updateScore(){}
+- finalScore(){}
+- arrayUpdater(){}
+- elementInstanciator(){}
+- arrayFilter(){}
 
 Player.js: 
-- Player(){}
-- player.prototype.create(){}
-- player.prototype.update(){}
-- player.prototype.movement(){}
-- player.prototype.screenCollision(){}
-- player.prototype.bookCollision(){}
+- Player{}
+- create(){}
+- setDirection(){}
+- updatePosition(){}
+- wallCollision(){}
 	
 Books.js:  
-- Book(){}
-- book.prototype.create(){}
-- book.prototype.update(){}
-- book.prototype.didCollide(){}
-- book.prototype.isInScreen(){}
+- Book{}
+- create(){}
+- updatePosition(){}
+- isInScreen(){}
+- wallCollision(){}
 ```
 
 ## States and State Transitions
 ```
-Definition of the different states and their transition
-(transition functions)
-
  - Splash Screen gameScreen
-    function createSplashScreen(){}
-    function startGame(){}
+    buildSplashScrteen = () => {}
 
 - Game Screen
-    function createGameScreen(){}
-    game.prototype.hasWon(){}
+    buildGameScreen = () => {}
+    game.startGame()
 
 - Win Screen
-    function createWinScreen(){}
-    function startGame(){}
-```
-
-## Task
-```
-- Main.js:  buildSplashScreen(){} 
-
-- Main.js:  buildGameScreen(){}
-
-- Main.js:  buildWinScreen(){}
-
-- Game.js: Game(){}
-
-- Game.js: game.prototype.startLoop(){} 
-
-- Game.js: game.prototype.create(){}
-
-- Player.js: Player(){}
-
-- Player.js: player.prototype.create(){}
-
-- Player.js: player.prototype.update(){}
-
-- Player.js: player.prototype.movement(){}
-
-- Books.js: Book(){}
-
-- Books.js: book.prototype.create(){}
-
-- Books.js: book.prototype.update(){}
-
-- Player.js:player.prototype.screenCollision(){}
-
-- Player.js:player.prototype.bookCollision(){}
-
-- Books.js: book.prototype.didCollide(){}
-
-- Books.js: book.prototype.isInScreen(){}
-
-- Game.jsgame.prototype.updateScore(){}
-
-- Game.jsgame.prototype.hasWon(){}
-```
+    builsWinScreen = () => {}
+    buildGameScreen()
+``
  
 ## Links
 ```
-- Trello
+- [Trello](https://trello.com/b/KO8v69hS/pass-the-exam)
 
-    https://trello.com/b/KO8v69hS/pass-the-exam
+- [Git](https://github.com/jphrubant/Pass-The-Exam)
 
-- Git
-
-    https://github.com/jphrubant/Pass-The-Exam
-
-- Slides
-
-URls for the project presentation (slides) Link Slides.com
+- [Slides](https://docs.google.com/presentation/d/1AKM3zbthBogAFCACLj8Hs0m68whEW3fjn9G5P19sw5A/edit?usp=drive_web&ouid=105431715516864946013)
 ```

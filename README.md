@@ -71,10 +71,10 @@ Books.js:
 ``
  
 ## Links
-```
+
 - [Trello](https://trello.com/b/KO8v69hS/pass-the-exam)
 
 - [Git](https://github.com/jphrubant/Pass-The-Exam)
 
 - [Slides](https://docs.google.com/presentation/d/1AKM3zbthBogAFCACLj8Hs0m68whEW3fjn9G5P19sw5A/edit?usp=drive_web&ouid=105431715516864946013)
-```
+
